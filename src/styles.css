@@ -1,0 +1,9 @@
+
+  @import '@mdi/font/css/materialdesignicons.css';
+  
+  html {
+	min-height: 100%;
+  }
+  body {
+	min-height:100%;
+  }

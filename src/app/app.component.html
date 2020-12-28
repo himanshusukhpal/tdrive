@@ -1,0 +1,116 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+	<!-- <div class="left-icon" (click)="ToggleExplore()" > &#9776; </div> -->
+	<div class="right" >
+	  <span class="right-title" >Welcome</span>
+	  <img
+		width="40"
+		alt="Angular Logo"
+		src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+	  />
+	</div>
+</div>
+
+<div id="page">
+	<!-- <div id="explorer" >
+	  <div class="full-container">
+		<ul id="myUL">
+		  <li><span class="caret" (click)="toggleList(0)" ></span>Folders
+			<ul id="branch{{i}}" *ngFor="let ele of tree | keyvalue; index as i" > 
+		      <ng-container *ngIf="!checkIfArray(ele); else elseBlock"> 
+				<li> {{ ele.value }} </li> 
+			  </ng-container>
+		      <ng-template #elseBlock> 
+				<li> <span class="caret" ></span> {{ ele.key }} </li>
+			  </ng-template>
+			</ul>
+		  </li>
+		  <li><span id="parent0" class="caret" (click)="toggleList(0)" ></span>Folders
+			<ul id="branch0" class="openlist" >
+			  <li>Water</li>
+			  <li>Coffee</li>
+			  <li><span id="parent1" class="caret" (click)="toggleList(1)" ></span>Tea
+				<ul id="branch1" class="openlist" >
+				  <li>Black Tea</li>
+				  <li>White Tea</li>
+				  <li><span id="parent2" class="caret" (click)="toggleList(2)" ></span>Green Tea
+					<ul id="branch2" class="openlist" >
+					  <li>Sencha</li>
+					  <li>Gyokuro</li>
+					  <li>Matcha</li>
+					  <li>Pi Lo Chun</li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>  
+			</ul>
+		  </li>
+		</ul>
+	  </div>
+	</div> -->
+	<div id="main">
+	  <div class="full-container">
+		<div id="main-head" >
+		  <span id="backbtn" (click)="backpress();" > Back </span>
+		  <span id="breadcrumbs"> {{ path }}  </span> 
+		  <div class="adfoicons" >
+			<a (click)="showaddFile();" > <span class = "mdi mdi-file-plus" > </span>  New File </a>
+			&nbsp;
+			<a (click)="showaddFolder();" > <span class = "mdi mdi-folder-plus" > </span> New Folder </a>
+		  </div>
+		</div>
+		<div id="main-body" >
+		  <div id="modal" >
+		    <div id="modal-content" >
+			  <span class='modal-close' (click)='closemodal();' >&times;</span>
+			  <div id="addFileInput">
+			    <input id="InputFilename"  > &nbsp;
+				<button (click)="addFile();" > Create File </button>
+			  </div>
+			  <div id="addFolderInput">
+				<input id="InputFoldername" > &nbsp;
+				<button (click)="addFolder();" > Create Folder </button>
+			  </div>
+			  <div id="renameFileInput">
+				<input id="InputFileRename" > &nbsp;
+				<button (click)="renameFile();" > Rename File </button>
+			  </div>
+			  <div id="renameFolderInput">
+				<input id="InputFolderRename" > &nbsp;
+				<button (click)="renameFolder();" > Rename Folder </button>
+			  </div>
+			</div>
+		  </div>
+		  <ng-container *ngFor="let ele of folder | keyvalue; index as i" >
+			<ng-container *ngIf="!checkIfArray(ele); else FolderBlock" >
+			<div class="card" >
+			  <a class="card-delete mdi mdi-delete" (click)="deleteFile(ele.key);" ></a>
+			  <div class="card-icon">
+				<span class="mdi mdi-file" ></span>
+			  </div>
+			  <div class="card-title" > 
+				<div class="cartelame"> {{ ele.value }} </div>
+				<a class="card-rename mdi mdi-pencil" (click)="showRenameFile(ele.key);" ></a>
+			  </div>
+			</div>
+			</ng-container>
+			<ng-template #FolderBlock>
+			<div class="card" (dblclick)="changeFolder(ele.key)" >
+			  <a class="card-delete mdi mdi-delete" (click)="deleteFolder(ele.key);" ></a>
+			  <div class="card-icon">
+				<span class="mdi mdi-folder" ></span>
+			  </div>
+			  <div class="card-title" > 
+				<div class="cartelame"> {{ ele.key }} </div>
+				<a class="card-rename mdi mdi-pencil" (click)="showRenameFolder(ele.key);" ></a>
+			  </div>
+			</div>
+			</ng-template>
+		  </ng-container >
+		</div>
+	  </div>
+	</div>
+</div>
+
+<div id="footer" > 
+</div>

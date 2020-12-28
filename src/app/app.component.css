@@ -1,0 +1,353 @@
+  
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .toolbar {
+    position: absolute;
+	padding: 2px 10px;
+	z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+  
+  .right-title {
+	margin:auto;
+	text-align:center;
+  }
+  
+  .right {
+	display:flex;
+	text-align:center;
+	vertical-align:middle;
+	right:0;
+	position:absolute;
+	float:right;
+  }
+  
+  .left-icon {
+	display:none;
+	left:0;
+  }
+  
+  .full-container {
+	margin: 10px;
+	padding: 10px;
+	overflow:auto;
+  }
+  
+  #page {
+	position:absolute;
+	margin-top:60px;
+	margin-bottom:30px;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background: #F5F5F5;
+	display : flex;
+	width:100%;
+  }
+  #explorer {
+	margin: auto;
+	background:white;
+	border-radius:2%;
+	box-shadow: 2px 2px 10px -8px #000, -2px -2px 5px -10px #000;
+	overflow:auto;
+	z-index:9;
+	width:20%;
+	height:95%;
+	left:0;
+	white-space: nowrap;
+  }
+  
+	ul, ol {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0 0 0 10px;
+	}
+	
+	#myUL {
+	  margin: 0 0 0 10px;
+	}
+	
+	.caret {
+	  margin-left: -15px;
+	  cursor: pointer;
+	  -webkit-user-select: none; /* Safari 3.1+ */
+	  -moz-user-select: none; /* Firefox 2+ */
+	  -ms-user-select: none; /* IE 10+ */
+	  user-select: none;
+	}
+
+	.caret::before {
+	  content: "\25B7";
+	  color: black;
+	  display: inline-block;
+	  margin-right: 3px;
+	}
+
+	.caret-down::before {
+	  -ms-transform: rotate(90deg); /* IE 9 */
+	  -webkit-transform: rotate(90deg); /* Safari */
+	  transform: rotate(90deg);  
+	}
+
+	.openlist {
+	  display: block;
+	}
+
+	.closelist {
+	  display: none;
+	}
+	
+  #main {
+	margin:auto;
+	background:white;
+	border-radius:1%;
+	box-shadow: -2px 2px 10px -8px #000, 2px -2px 5px -10px #000;
+	width:98%;
+	z-index:1;
+	height:95%;
+  }
+  
+  #main-head {
+	display: flex;
+	margin : 10px 2.5%;
+	padding: 0 10px 20px 10px;
+	border-bottom: 1px solid;
+	font-size:25px;
+	min-height:25px;
+  }
+   #main-body {
+	max-height:100%;
+	margin : 10px 0 10px 2.5%;
+	padding: 10px 1.5%;
+	font-size:25px;
+	overflow:auto;
+  }
+  
+  #modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 99; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  #modal-content {
+	background-color: #fefefe;
+	margin: 20% auto; /* 5% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 25%; /* Could be more or less, depending on screen size */
+  }
+  .modal-close {
+	cursor:pointer;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  #addFileInput {
+	display : none;
+  }
+  #addFolderInput {
+	display : none;
+  }
+  #renameFileInput {
+	display : none;
+  }
+  #renameFolderInput {
+	display : none;
+  }
+  #backbtn {
+	cursor:pointer;
+  }
+  #breadcrumbs {
+	white-space: nowrap;
+	width:65%;
+	overflow:scroll;
+	overflow-y:hidden;
+	margin-left:3%;
+  }
+  #breadcrumbs::-webkit-scrollbar-track
+  {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+  }
+  #breadcrumbs::-webkit-scrollbar
+  {
+	width: 2px;
+	height:0px;
+	background-color: #F5F5F5;
+  }
+  #breadcrumbs::-webkit-scrollbar-thumb
+  {
+	background-color: #c0c0c0;
+  }
+  
+  .adfoicons {
+	background-color: white;
+	position:absolute;
+	z-index: 3;
+	right:0;
+	margin-right:5%;
+	cursor:pointer;
+	float:right;
+  }
+  
+  .card {
+	margin: 15px;
+	cursor: pointer;
+	display: inline-block;
+	width: 15.5%;
+	border-radius: 5%;
+	box-shadow: 0 2px 10px -3px #000;
+  }
+  .card-delete {
+	top:0;
+	float:right;
+	margin: 5px 10px 0 0;
+  }
+  .card-icon {
+	top:0;
+	height:120px;
+	font-size: 4em;
+	text-align:center;
+	vertical-align:center;
+  }
+  .card-title {
+	bottom:0;
+	padding:10px;
+  }
+  .cartelame {
+	display:inline-block;
+	padding-left: 5px;
+	max-width: 70%;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+  }
+  .card-rename {
+	z-index:3;
+	float:right;
+	margin: 0 5px 10px 0;
+  }
+  
+  #footer {
+	position:absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+	z-index:10;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 999px) {
+	.left-icon {
+	  display:block;
+	}
+	
+	#explorer {
+	  width: 0;
+	  transition: width .35s;
+	}
+	#explorer.open {
+	  width: 60%;
+	}
+	#main {
+	  width:100%;	
+	}
+	
+	ul, ol {
+	  list-style-type: none;
+	  padding: 0;
+	  margin: 0 0 0 5px;
+	}
+	
+	#myUL {
+	  margin: 0 0 0 5px;
+	}
+	
+	#main-head {
+	  font-size:20px;
+	  min-height:20px;
+	}
+	#main-body {
+	  font-size:17px;
+	}
+	.card {
+	  margin: 15px;
+	  width: 20%;
+	}
+  }
+  
+  @media screen and (max-width: 729px) {
+	#main-head {
+	  font-size:17px;
+	  min-height:17px;
+	}
+	#main-body {
+	  font-size:15px;
+	}
+	.card {
+	  margin: 10px;
+	  width: 18%;
+	}
+	 .card-icon {
+	height:70px;
+   }
+  }
+  
+   @media screen and (max-width: 375px) {
+	.card {
+	  margin: 10px;
+	  width: 25%;
+	}
+   }
